@@ -13,13 +13,16 @@ var db = mongoose.connection;
 //From Global
 const global = require("../global");
 
+const css = "../static/css";
 
 
 // User model
 const User = require("../models/User");
-// const { ensureAuthenticated } = require("../config/auth");
+//CSS route
 
-// require('./config/passport')(passport);
+// router.get('/dashboardcss', (req,res)=>{
+//   return  res.sendFile(css + "/dasboard.css")
+// });
 //Login Page
 router.get("/login", function(req, res) {
   res.render("login");

@@ -45,7 +45,8 @@ app.use(
 );
 //Tp serve static files
 app.use(express.static('static'));
-app.use('/static/', express.static('static'));
+app.use('/static', express.static('static'));
+app.use(express.static(__dirname + '/static'));
 
 // passport
 app.use(passport.initialize());

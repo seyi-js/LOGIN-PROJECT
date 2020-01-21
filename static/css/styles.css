@@ -1,0 +1,20 @@
+#profile-image {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#profile {
+    border-color:#024a3c;
+   	width: 153px;
+    height: :150px;
+    border-width: 2px;
+    border-bottom-color: transparent;
+     border-top-color: transparent;
+    border-style: solid;
+}
+
