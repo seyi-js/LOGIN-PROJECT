@@ -6,8 +6,10 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/gfg", { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
+mongoose.connect("mongodb://localhost:27017/gfg", { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 //From Global
