@@ -1,0 +1,42 @@
+.welcome-body {
+	background-color: blue;
+	background-image: url('/static/img/cashual.jpg');
+	background-repeat: no-repeat, repeat;
+	 background-position: center;
+	 background-size: 100%, 100%;
+	/* height: 100%;
+	 width: 100%;*/
+}
+
+.welcome-page {
+	background-color: #e6eded;
+	opacity: 0.5 ;
+	margin:0 auto;
+	text-align: center;
+	height: 500px;
+	width:500px;
+	padding-top:50px;
+	margin-top:80px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+	.welcome-page {
+	background-color: #e6eded;
+	opacity: 0.5 ;
+	margin:0 auto;
+	text-align: center;
+	height: 500px;
+	width:500px;
+	padding-top:50px;
+	margin-top:80px;
+}
+.welcome-body {
+	background-size: 800px, 1000px;
+	 height: 1000px;
+	 width: 100px;
+}
+
+
+}
