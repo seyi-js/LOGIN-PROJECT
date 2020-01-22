@@ -18,11 +18,22 @@ const css = "../static/css";
 
 // User model
 const User = require("../models/User");
-//CSS route
 
-// router.get('/dashboardcss', (req,res)=>{
-//   return  res.sendFile(css + "/dasboard.css")
-// });
+//Getting all users in the DB and render on the webpage in json format
+router.get('/userdata', (req,res) => {
+User.find({
+
+    },
+    (err, result) => {
+        if (err) throw err;
+        else {
+            
+            res.json(result)
+            
+        }
+    })
+  
+})
 //Login Page
 router.get("/login", function(req, res) {
   res.render("login");
