@@ -14,6 +14,24 @@
 <p class="lead mb-3" id ="myEmail">Email: <%= email %>  </p>
 <p class="lead mb-3">Contact: <%= contact %>  </p>
 <p class="lead mb-3">Date: <%= date %>  </p>
+<% if(typeof notes != ''){ %>
+<% [notes].forEach(function(notes){ %>
+
+  <%= notes %>
+ 
+<% });%>
+
+<% } %>
+<form action="/dashboard" method= "POST" >
+ <div class="form-group">
+                    <label for="note">Notes</label>
+                    <input type="text" id="note" name="note" class="form-control" placeholder="Enter Note Here"
+                        value="<%= typeof note != 'undefined' ? note : '' %>" />
+                </div>
+                 <button type="submit" class="btn btn-primary btn-block">
+                    submit
+                </button>
+            </form>
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
 <a href="/users/changepass" class="btn btn-secondary">Change Password</a>
 

@@ -12,14 +12,17 @@ mongoose.set('useCreateIndex', true);
 mongoose.connect("mongodb://localhost:27017/gfg", { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
+// User model
+const User = require("../models/User");
 //From Global
 const global = require("../global");
 
-const css = "../static/css";
+// const css = "../static/css";
 
 
-// User model
-const User = require("../models/User");
+
+
+
 
 //Getting all users in the DB and render on the webpage in json format
 router.get('/userdata', (req,res) => {
@@ -29,12 +32,10 @@ User.find({
     (err, result) => {
         if (err) throw err;
         else {
-            
             res.json(result)
-            
         }
     })
-  
+
 })
 //Login Page
 router.get("/login", function(req, res) {
@@ -51,11 +52,11 @@ router.post("/register",upload.single("ProfileImage"), (req, res) => {
     console.log('File uploaded!');
     var profileimage = req.file.filename;
     // profileimage+='.jpg';
-    console.log(profileimage);    
+    // console.log(profileimage);    
   //   console.log(profileimage);
 } else {
-    console.log('No file uploaded!!!!!');
-    // var profileimage = 'noimage.jpg';
+    // console.log('No file uploaded!!!!!');
+    var profileimage = 'noimage.jpg';
 }
   const { name, email, contact, password, password2 } = req.body;
   let errors = [];
@@ -269,14 +270,14 @@ router.post("/changepass", ensureAuthenticated,(req, res) => {
           errors.push({ msg: "New Password should be atleast 6 characters" });
         }
         // Error Msg
-        if (errors.length > 0) {
+         var newUser = { password2 };if (errors.length > 0) {
           res.render("changepassword", {
             errors,
             // password,
             // password2
           });
         } else {
-          var newUser = { password2 };
+         
 
           //Hash Password
           bcrypt.genSalt(10, (err, salt) =>
@@ -308,5 +309,39 @@ router.post("/changepass", ensureAuthenticated,(req, res) => {
     })
     .catch(err => console.log(err));
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
