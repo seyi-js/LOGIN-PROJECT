@@ -24,6 +24,19 @@ var userSchema = new mongoose.Schema({
     },
     profileimage: {
         type : String,
+    },
+
+    Post : {
+        title :{
+            type: String,
+        },
+        note: {
+            type: String,
+        },
+        date: {
+            type: String,
+            default: new Date().toLocaleString()
+        }
     }
     
 },

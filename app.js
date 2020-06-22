@@ -20,7 +20,7 @@ db.once("open", function(callback) {
     console.log("MongoDB Connected...");
 });
 
-
+  
 const app = express();
 
 //Passport config
